@@ -6,9 +6,10 @@ import { FAQ, Illustration } from '../components';
 
 const ContentWrapper = styled.div`
 background: ${props => props.theme.colors.contentBg};
+position: relative;
 width: 100%;
 max-width: 65rem;
-height: 67%;
+height: 67vh;
 border-radius: 1.64rem;
 display: flex;
 flex-wrap: wrap;
