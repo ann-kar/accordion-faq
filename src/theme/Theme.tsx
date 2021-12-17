@@ -6,10 +6,11 @@ const theme = {
         accent: '#F47B56',
         bgUpper: '#B068E9',
         bgLower: '#6463E7',
+        contentBg: '#FFF',
         font: '#4B4C5F',
         fontLarge: '#1E1F36',
         fontSmall: '#787887',
-        contentBg: '#FFF'
+        spacer: '#E8E8EA'
       },
       fontSizes: {
         lg: '34px',

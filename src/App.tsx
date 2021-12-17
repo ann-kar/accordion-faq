@@ -12,8 +12,6 @@ background: linear-gradient(
 width: 100vw;
 height: 100%;
 min-height: 100vh;
-padding-top: 9.3rem;
-padding-bottom: 9.3rem;
 display: flex;
 justify-content: center;
 align-items: center;
