@@ -1,8 +1,31 @@
 import { render } from '@testing-library/react';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { FAQItem } from '../components';
+
+const data = [
+    {
+        q: 'How many team members can I invite?',
+        a: 'Every user can invite up to 5 team members.'
+    },
+    {
+        q: 'How many team members can I invite?',
+        a: 'Every user can invite up to 5 team members.'
+    },
+    {
+        q: 'How many team members can I invite?',
+        a: 'Every user can invite up to 5 team members.'
+    },
+    {
+        q: 'How many team members can I invite?',
+        a: 'Every user can invite up to 5 team members.'
+    },
+    {
+        q: 'How many team members can I invite?',
+        a: 'Every user can invite up to 5 team members.'
+    },
+];
 
 const FAQWrapper = styled.div`
 //background: lightblue;
@@ -26,20 +49,29 @@ width: 100%;
 padding: 0.71rem 0;
 height: 100%;
 max-height: 22rem;
-overflow-y: scroll;
+overflow-y: hidden;
 overflow-x: hidden;
 `
 
 function FAQ(): JSX.Element {
+
+    const [active, setActive] = useState('');
+
+    const toggleActive = (e) => {
+        (e.target.id === active) ?  setActive('') : setActive(e.target.id);
+    }
+
     return (
         <FAQWrapper>
             <FAQTitle>FAQ</FAQTitle>
             <FAQContentWrapper>
-                <FAQItem />
-                <FAQItem />
-                <FAQItem />
-                <FAQItem />
-                <FAQItem />
+                {data.map((item, i) => <FAQItem 
+                active={active} 
+                toggleActive={toggleActive} 
+                question={item.q} 
+                answer={item.a} 
+                id={`id-${i}`} 
+                key={`faq-${i}`} />)}
             </FAQContentWrapper>
         </FAQWrapper>
     )
