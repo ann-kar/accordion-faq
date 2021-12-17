@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Theme from "./theme/Theme";
+import { Content } from "./components";
 
 const AppWrapper = styled.main`
 background: linear-gradient(
@@ -22,7 +23,9 @@ function App() {
 
   return (
     <Theme>
-      <AppWrapper/>
+      <AppWrapper>
+        <Content />
+      </AppWrapper>
     </Theme>
   );
 }
