@@ -10,6 +10,11 @@ const theme = {
         fontLarge: '#1E1F36',
         fontSmall: '#787887',
         contentBg: '#FFF'
+      },
+      fontSizes: {
+        lg: '34px',
+        md: '14px',
+        sm: '12px'
       }
 };
 
