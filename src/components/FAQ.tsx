@@ -3,29 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { FAQItem } from '../components';
-
-const data = [
-    {
-        q: 'How many team members can I invite?',
-        a: 'Every user can invite up to 5 team members.'
-    },
-    {
-        q: 'How many team members can I invite?',
-        a: 'Every user can invite up to 5 team members.'
-    },
-    {
-        q: 'How many team members can I invite?',
-        a: 'Every user can invite up to 5 team members.'
-    },
-    {
-        q: 'How many team members can I invite?',
-        a: 'Every user can invite up to 5 team members.'
-    },
-    {
-        q: 'How many team members can I invite?',
-        a: 'Every user can invite up to 5 team members.'
-    },
-];
+import qa from '../data/qa';
 
 const FAQWrapper = styled.div`
 //background: lightblue;
@@ -65,7 +43,7 @@ function FAQ(): JSX.Element {
         <FAQWrapper>
             <FAQTitle>FAQ</FAQTitle>
             <FAQContentWrapper>
-                {data.map((item, i) => <FAQItem 
+                {qa.map((item, i) => <FAQItem 
                 active={active} 
                 toggleActive={toggleActive} 
                 question={item.q} 
