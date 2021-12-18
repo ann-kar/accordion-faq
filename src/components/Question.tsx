@@ -9,6 +9,7 @@ interface Props {
 }
 
 const QuestionStyles = styled.div`
+padding: 1.28rem 0;
 display: flex;
 align-items: center;
 pointer-events: none;
@@ -21,6 +22,7 @@ line-height: 1.006rem;
 font-weight: ${props => props.display ? 700 : 400};
 color: ${props => props.display ? props => `${props.theme.colors.fontLarge}` : props => `${props.theme.colors.font}`};
 `
+
 const QuestionArrow = styled.img<Props>`
 width: 0.7rem;
 height: 0.42rem;
@@ -38,4 +40,4 @@ function Question({question, selected}): JSX.Element {
     )
 }
 
-export default Question;
+export {Question, QuestionText};

@@ -7,11 +7,13 @@ interface Props {
 }
 
 const AnswerStyles = styled.p<Props>`
-padding-top: 1rem;
 color: ${props => props.theme.colors.fontSmall};
 font-size: ${props => props.theme.fontSizes.sm};
 line-height: 1.28rem;
-display: ${props => props.display ? "block" : "none"};
+max-height: ${props => props.display ? '8rem' : '0'};
+padding-right: calc(0.7rem + 1.15rem);
+padding-bottom: ${props => props.display ? '1.28rem' : '0'};
+overflow: hidden;
 pointer-events: none;
 `
 
