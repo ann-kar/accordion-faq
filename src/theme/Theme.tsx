@@ -16,6 +16,10 @@ const theme = {
         lg: '34px',
         md: '14px',
         sm: '12px'
+      },
+      margins: {
+        sm: '24px',
+        lg: '95px'
       }
 };
 
