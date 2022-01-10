@@ -17,7 +17,18 @@ flex-wrap: wrap;
 align-items: center;
 
 @media screen and (min-width: 436px) {
+    width: calc(436px - 24px * 2);
     margin-top: calc(436px * 0.63 * 0.4);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+    width: 67vw;
+    height: calc(67vw * 0.66);
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 `
 
