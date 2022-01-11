@@ -15,6 +15,7 @@ border-radius: 1.64rem;
 display: flex;
 flex-wrap: wrap;
 align-items: center;
+justify-content: space-between;
 
 @media screen and (min-width: 436px) {
     width: calc(436px - 24px * 2);
@@ -25,7 +26,7 @@ align-items: center;
 
 @media screen and (min-width: 768px) {
     width: 67vw;
-    height: calc(67vw * 0.66);
+    height: calc(67vw * 0.55);
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
