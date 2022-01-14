@@ -11,10 +11,23 @@ const IllustrationWrapper = styled.div`
 width: 100%;
 height: 0;
 position: relative;
-@media screen and (min-width: 768px) {
-    width: 45%;
-    height: 100%;
-}
+
+@media screen and (min-aspect-ratio: 1/1) {
+
+    @media screen and (min-width: 600px) {
+      height: 100%;
+      width: 30%;   
+    }
+  
+    @media screen and (min-width: 800px) {
+      width: 35%;   
+    }
+  
+    @media screen and (min-width: 927px) {
+      width: 45%;
+    }
+  }
+  
 `
 
 const ImgSceneWrapper = styled.div`
@@ -89,7 +102,7 @@ function Illustration(): JSX.Element {
                     <ImgScene />
                     <ImgShadow />
                 </ImgSceneWrapper>
-                <ImgBox />
+                {/* <ImgBox /> */}
             </IllustrationWrapper>
         </>
     )

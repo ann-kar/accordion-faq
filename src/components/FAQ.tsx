@@ -18,11 +18,27 @@ overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
-    width: 50%;
-    padding-right: 55px;
-    padding-top: calc(65px - 27px);
-    padding-bottom: 83px;
+    // width: 50%;
+    // padding-right: 55px;
+    // padding-top: calc(65px - 27px);
+    // padding-bottom: 83px;
 }
+
+@media screen and (min-aspect-ratio: 1/1) {
+  @media screen and (min-width: 600px) {
+    width: 70%;   
+    height: 100%;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 65%;   
+  }
+
+  @media screen and (min-width: 927px) {
+    width: 55%;
+  }
+}
+
 `
 
 const FAQTitle = styled.h1`

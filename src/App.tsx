@@ -17,6 +17,13 @@ justify-content: center;
 align-items: center;
 padding-top: 40px;
 padding-bottom: 80px;
+
+
+@media screen and (min-aspect-ratio: 1/1) {
+  @media screen and (min-width: 600px) {
+    padding: calc(2vh + 1rem) calc(4vw + 2rem);
+  }
+
 `
 
 function App() {

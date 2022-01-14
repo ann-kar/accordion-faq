@@ -18,7 +18,7 @@ margin-top: calc((100vw - 48px) * 0.73 * 0.88 * 0.5); // to allow for illustrati
 border-radius: 23px;
 background: ${props => props.theme.colors.contentBg};
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 400px) and (max-aspect-ratio: 1/1) {
     max-width: calc(400px - 48px);
     max-height: calc((400px - 48px) * 1.63);
     margin-top: calc((400px - 48px) * 0.73 * 0.88 * 0.5); // to allow for illustration
@@ -26,12 +26,22 @@ background: ${props => props.theme.colors.contentBg};
     margin-right: auto;
 }
 
-@media screen and (min-width: 768px) {
-    width: 67vw;
-    height: calc(67vw * 0.55);
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+@media screen and (min-aspect-ratio: 1/1) {
+    margin: 0 auto;
+    min-height: 320px;
+
+    @media screen and (min-width: 600px) {
+        width: auto;    
+        max-width: 85vw; 
+        max-height: calc(85vw * 0.55);
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    @media screen and (min-width: 800px) {   
+        width: 67vw;
+        height: calc(67vw * 0.555);
+    }
 }
 `
 
