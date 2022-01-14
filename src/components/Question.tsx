@@ -18,6 +18,13 @@ justify-content: space-between;
 @media screen and (max-width: 375px) {
     padding: 1rem 0;
 }
+
+@media screen and (min-aspect-ratio: 1/1) and (max-width: 1000px) {
+    @media screen and (min-width: 600px) {
+        padding: 1rem 0;
+    }
+}
+
 `
 
 const QuestionText = styled.h2<Props>`

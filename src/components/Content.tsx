@@ -28,7 +28,7 @@ background: ${props => props.theme.colors.contentBg};
 
 @media screen and (min-aspect-ratio: 1/1) {
     margin: 0 auto;
-    min-height: 320px;
+    min-height: 350px;
 
     @media screen and (min-width: 600px) {
         width: auto;    
