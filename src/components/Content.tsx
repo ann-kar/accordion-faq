@@ -13,12 +13,14 @@ position: relative;
 width: calc(100vw - 48px);
 height: calc((100vw - 48px) * 1.63);
 margin: 0 24px;
+margin-top: calc((100vw - 48px) * 0.73 * 0.88 * 0.5); // to allow for illustration
 border-radius: 23px;
 background: ${props => props.theme.colors.contentBg};
 
 @media screen and (min-width: 400px) {
-    width: calc(400px - 48px);
-    height: calc((400px - 48px) * 1.63);
+    max-width: calc(400px - 48px);
+    max-height: calc((400px - 48px) * 1.63);
+    margin-top: calc((400px - 48px) * 0.73 * 0.88 * 0.5); // to allow for illustration
     margin-left: auto;
     margin-right: auto;
 }

@@ -15,6 +15,8 @@ min-height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
+padding-top: 40px;
+padding-bottom: 80px;
 `
 
 function App() {
