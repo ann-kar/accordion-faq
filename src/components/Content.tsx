@@ -12,6 +12,7 @@ justify-content: space-between;
 position: relative;
 width: calc(100vw - 48px);
 height: calc((100vw - 48px) * 1.63);
+min-height: 480px;
 margin: 0 24px;
 margin-top: calc((100vw - 48px) * 0.73 * 0.88 * 0.5); // to allow for illustration
 border-radius: 23px;

@@ -32,17 +32,19 @@ line-height: 2.3rem;
 padding: 2rem 0;
 width: 100%;
 text-align: center;
-
+@media screen and (max-width: 375px) {
+    padding: 1rem 0;
+}
 `
 
 const FAQContentWrapper = styled.div`
 width: 100%;
 padding: 0.7rem 0;
 height: 100%;
-//max-height: 22rem;
 overflow-y: scroll;
 overflow-x: hidden;
-margin-bottom: 100px;
+
+
 `
 
 function FAQ(): JSX.Element {

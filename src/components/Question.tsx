@@ -14,6 +14,10 @@ display: flex;
 align-items: center;
 pointer-events: none;
 justify-content: space-between;
+
+@media screen and (max-width: 375px) {
+    padding: 1rem 0;
+}
 `
 
 const QuestionText = styled.h2<Props>`
@@ -28,7 +32,11 @@ width: 0.7rem;
 height: 0.42rem;
 margin-right: 1.15rem;
 content:url('${arrow}');
-transform: ${props => props.display ? 'rotate(180deg)' : null}
+transform: ${props => props.display ? 'rotate(180deg)' : null};
+
+@media screen and (max-width: 375px) {
+    margin-right: 0;
+}
 `
 
 function Question({question, selected}): JSX.Element {
