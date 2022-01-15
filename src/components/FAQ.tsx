@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import { FAQItem } from '../components';
@@ -20,19 +19,14 @@ overflow: hidden;
 @media screen and (min-aspect-ratio: 1/1) {
 
   @media screen and (min-width: 600px) {
-    width: 70%;   
+    width: 60%; 
     height: 100%;
     padding-right: ${props => props.theme.margins.sm};
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
 
-  @media screen and (min-width: 800px) {
-    width: 65%;   
-  }
-
   @media screen and (min-width: 927px) {
-    width: 55%;
     padding-top: calc(65px - 27px);
     padding-bottom: 83px;
   }
@@ -82,8 +76,8 @@ const FAQContentWrapper = styled.div`
 width: 100%;
 padding: 0.7rem 0;
 height: 100%;
-overflow-y: scroll;
-overflow-x: hidden;
+overflow: scroll;
+overflow: hidden;
 
 @media screen and (min-aspect-ratio: 1/1) and (max-width: 1000px) {
     @media screen and (min-width: 600px) {
@@ -101,7 +95,6 @@ function FAQ(): JSX.Element {
     }
 
     return (
- 
         <FAQWrapper>
             <FAQTitle>FAQ</FAQTitle>
             <FAQContentWrapper>
@@ -114,7 +107,7 @@ function FAQ(): JSX.Element {
                 key={`faq-${i}`} />)}
             </FAQContentWrapper>
         </FAQWrapper>
-        
+
     )
 }
 

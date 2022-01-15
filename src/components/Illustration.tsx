@@ -1,95 +1,87 @@
-import { render } from '@testing-library/react';
-import React from 'react';
 import styled from 'styled-components';
 
 import image from '../assets/picture.svg';
 import box from '../assets/box.svg';
 import shadow from '../assets/shadow.svg';
-import shadows from '../assets/shadows.svg';
+import line from '../assets/path-upper.svg';
 
 const IllustrationWrapper = styled.div`
 width: 100%;
 height: 0;
 position: relative;
-
-@media screen and (min-aspect-ratio: 1/1) {
-
-    @media screen and (min-width: 600px) {
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 600px) {
       height: 100%;
-      width: 30%;   
-    }
-  
-    @media screen and (min-width: 800px) {
-      width: 35%;   
-    }
-  
-    @media screen and (min-width: 927px) {
-      width: 45%;
-    }
+      width: 40%;   
   }
-  
 `
 
-const ImgSceneWrapper = styled.div`
-width: 100%;
-height: 0;
-position: relative;
-@media screen and (min-width: 768px) {
+const ImageSceneWrapper = styled(IllustrationWrapper)`
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 600px) {
     overflow: hidden;
     width: 100%;
-    height: 100%;
-    position: relative;
-    background: blue;
 }
 `
 
 const Image = styled.img`
 position: absolute;
-
-@media screen and (max-aspect-ratio: 1/1) {
+@media screen and (max-aspect-ratio: 1/1),
+       screen and (min-aspect-ratio: 1/1) and (max-width: 600px) {
     top: 0;
     left: 50%;
     width: calc((100vw - 48px) * 0.73);
     max-width: calc((400px - 48px) * 0.73);
     max-height: calc((400px - 48px) * 0.73 * 0.88);
-    transform: translate(-50%, -50%);    
+    transform: translate(-50%, -50%); 
 }
 
-@media screen and (min-width: 600px) {
-    // top: unset;
-    // bottom: 0;
-    // left: -21.5%;
-    // width: 120%;
-    // max-width: 120%;
-    // transform: none;
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 600px) {
+    width: 120%;
+    left: -20%;
+    bottom: 0;
+    transform: translate(0, -10%);
 }
 `
 
-const ImgScene = styled(Image)`
+const ImageScene = styled(Image)`
 content: url('${image}');
 `
 
-const ImgShadow = styled(Image)`
+const ImageShadow = styled(Image)`
 content: url('${shadow}');
-@media screen and (min-width: 768px) {
-    display: none;
+@media screen and (min-width: 600px) and (min-aspect-ratio: 1/1) {
+    transform: translate(0, -10%) scale(2);
+    transform-origin: center right;
 }
 `
 
-const ImgBox = styled(Image)`
+const ImageBox = styled(Image)`
 content: url('${box}');
 display: none;
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
     display: block;
 }
 `
 
-const ImgShadows = styled(Image)`
-content: url('${shadows}');
+const Line = styled(Image)`
+content: url('${line}');
 display: none;
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) and (min-aspect-ratio: 1/1) {
     top: 0;
     display: block;
+    transform-origin: center right;
+}
+`
+
+const LineOne = styled(Line)`
+@media screen and (min-width: 600px) and (min-aspect-ratio: 1/1) {
+    transform: translate(0, -53%) scale(2);
+}
+`
+
+const LineTwo = styled(Line)`
+@media screen and (min-width: 600px) and (min-aspect-ratio: 1/1) {
+    transform: translate(0, -3%) scale(2);
 }
 `
 
@@ -97,12 +89,13 @@ function Illustration(): JSX.Element {
     return (
         <>
             <IllustrationWrapper>
-                <ImgSceneWrapper>
-                    <ImgShadows />
-                    <ImgScene />
-                    <ImgShadow />
-                </ImgSceneWrapper>
-                {/* <ImgBox /> */}
+                <ImageSceneWrapper>
+                    <LineOne />
+                    <LineTwo />
+                    <ImageScene />
+                    <ImageShadow />
+                </ImageSceneWrapper>
+                <ImageBox />
             </IllustrationWrapper>
         </>
     )
