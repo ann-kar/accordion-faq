@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import styled from 'styled-components';
 
-import arrow from '../assets/arrow.svg';
+import arrow from '../../assets/arrow.svg';
 
 interface Props {
     display: string;

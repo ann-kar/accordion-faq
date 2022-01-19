@@ -2,8 +2,8 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import styled from 'styled-components';
 
-import { Answer, Question } from '../components';
-import { QuestionText } from "../components/Question";
+import { Answer, Question } from '..';
+import { QuestionText } from "../Question/Question";
 
 const FAQItemWrapper = styled.div`
 &:hover ${QuestionText} {
