@@ -62,11 +62,15 @@ width: 100%;
 color: ${s.colors.fontLarge};
 font-size: ${s.fontSizes.lg}px;
 line-height: ${s.fontSizes.lg}px;
-padding: 0 0 ${s.mgs.sm}px 0;
+padding: 0 0 1rem 0;
 text-align: center;
 
 @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
   text-align: left;
+
+  @media (min-width: ${s.breakpoints.xxlg}px) {
+    padding-bottom: ${s.mgs.sm}px;
+  }
 }
 `
 

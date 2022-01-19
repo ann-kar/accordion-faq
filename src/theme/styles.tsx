@@ -83,7 +83,7 @@ const helpers = {
     },
     landscape: {
       contentW: '67vw',
-      minContentH: '330px',
+      minContentH: '350px',
       get imgHeight() {
           return `calc(${this.contentW} * 
                             ${styles.ratios.landscape.illustration} * 

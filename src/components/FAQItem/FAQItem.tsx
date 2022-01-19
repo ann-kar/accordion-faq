@@ -1,16 +1,14 @@
-import { render } from '@testing-library/react';
-import React from 'react';
 import styled from 'styled-components';
 
 import { Answer, Question } from '..';
-import { QuestionText } from "../Question/Question";
+import { QuestionText } from '../Question/Question';
+import {styles as s} from '../../theme/styles';
 
 const FAQItemWrapper = styled.div`
 &:hover ${QuestionText} {
-    color: ${props => props.theme.colors.accent};
+    color: ${s.colors.accent};
 }
-
-border-bottom: 1px solid ${props => props.theme.colors.spacer};
+border-bottom: 1px solid ${s.colors.spacer};
 `
 
 function FAQItem({ question, answer, active, toggleActive, id }): JSX.Element {
