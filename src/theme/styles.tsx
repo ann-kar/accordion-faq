@@ -28,7 +28,7 @@ const styles = {
         md: 14,
         sm: 12
     },
-    borderRadiuses: {
+    borderRadii: {
         md: 23,
     },
     portrait: {
@@ -38,6 +38,22 @@ const styles = {
         hToW: 1.63,
         imgWToContW: 0.73,
         imgHToW: 0.88
+    },
+    content: {
+        portrait: {
+            w: `calc(100vw - 2 * ${base.mgs.sm}px)`,
+            maxW: `calc(${base.breakpoints.sm}px - 2 * ${base.mgs.sm}px)`,
+            minH: '480px',
+            hToW: 1.63,
+            imgWToContW: 0.73,
+            imgHToW: 0.88
+        },
+        landscape: {
+            width: '67vw',
+            wToH: 1.8,
+            minH: '330px',
+            hToW: 0.555
+        }
     },
     landscape: {
         width: '67vw',
