@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/accordion-faq/static/css/main.3bb331fe.css",
+    "main.js": "/accordion-faq/static/js/main.6f09e56e.js",
+    "static/media/picture.svg": "/accordion-faq/static/media/picture.f2a98ad22a96df4bcde992c86f83c3a6.svg",
+    "static/media/box.svg": "/accordion-faq/static/media/box.f6e63daa075939b49b32f2c21280ffed.svg",
+    "static/media/path-upper.svg": "/accordion-faq/static/media/path-upper.298c0e8c5c205db4526edb562e0d88ad.svg",
+    "static/media/shadow.svg": "/accordion-faq/static/media/shadow.c056d14575a2a750b288f46e804def8e.svg",
+    "index.html": "/accordion-faq/index.html",
+    "static/media/arrow.svg": "/accordion-faq/static/media/arrow.deec313581e617c5d7f79f49e7d73f68.svg",
+    "main.3bb331fe.css.map": "/accordion-faq/static/css/main.3bb331fe.css.map",
+    "main.6f09e56e.js.map": "/accordion-faq/static/js/main.6f09e56e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bb331fe.css",
+    "static/js/main.6f09e56e.js"
+  ]
+}
