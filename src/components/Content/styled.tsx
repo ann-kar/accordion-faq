@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
-import {styles as s} from '../../theme/styles';
-
-const calcStyles = {
-    imgHeight: `calc(${s.content.portrait.w} * 
-                     ${s.content.portrait.imgWToContW} * 
-                     ${s.content.portrait.imgHToW})`,
-    maxImgHeight: `calc(${s.portrait.maxW} * ${s.portrait.imgWToContW} * ${s.portrait.imgHToW})`                
-}
+import {styles as s, helpers} from '../../theme/styles';
 
 const ContentWrapper = styled.div`
 display: flex;
@@ -15,11 +8,11 @@ flex-wrap: wrap;
 align-items: center;
 justify-content: space-between;
 position: relative;
-width: ${s.content.portrait.w};
-height: calc(${s.content.portrait.w} * ${s.content.portrait.hToW});
-min-height: ${s.content.portrait.minH};
+width: ${helpers.portrait.contentW};
+height: calc(${helpers.portrait.contentW} * ${s.ratios.portrait.contentHToW});
+min-height: ${helpers.portrait.minContentH};
 margin: 0 ${s.mgs.sm}px;
-margin-top: calc( ${calcStyles.imgHeight} * 0.5); 
+margin-top: calc(${helpers.portrait.imgHeight} * 0.5); 
 border-radius: ${s.borderRadii.md}px;
 background: ${s.colors.contentBg};
 
@@ -27,18 +20,17 @@ background: ${s.colors.contentBg};
        screen and (${s.media.horizontal}) 
               and (min-width: ${s.breakpoints.sm}px) 
               and (max-width: ${s.breakpoints.md}px) {
-    max-width: ${s.content.portrait.maxW};
-    max-height: calc(${s.content.portrait.maxW} *  ${s.content.portrait.hToW});
-    margin-top:  calc(${calcStyles.maxImgHeight} * 0.5);
-    margin-left: auto;
-    margin-right: auto;
+    max-width: ${helpers.portrait.maxContentW};
+    max-height: calc(${helpers.portrait.maxContentW} *  ${s.ratios.portrait.contentHToW});
+    margin: 0 auto;
+    margin-top: calc(${helpers.portrait.maxImgHeight} * 0.5);
 }
 
 @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
-   width: ${s.content.landscape.width};
-   height: calc(${s.content.landscape.width} * ${s.content.landscape.hToW});
-   min-height: ${s.content.landscape.minH};
-   min-width: calc(${s.content.landscape.minH} * ${s.content.landscape.wToH});     
+   width: ${helpers.landscape.contentW};
+   height: calc(${helpers.landscape.contentW} * ${s.ratios.landscape.contentHToW});
+   min-height: ${helpers.landscape.minContentH};
+   min-width: calc(${helpers.landscape.minContentH} * ${s.ratios.landscape.contentWToH});     
    margin: ${s.mgs.sm}px auto;
 }
 `

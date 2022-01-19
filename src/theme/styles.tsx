@@ -1,79 +1,18 @@
-const base = {
+const styles = {
     mgs: {
+        xsm: 20,
         sm: 24,
-        lg: 95
+        lg: 95,
+        xlg: 115
     },
     breakpoints: {
         xsm: '375',
         sm: 400,
         md: 600,
         lg: '800',
-        xlg: '927'
-    }
-};
-
-const styles = {
-    mgs: {
-        sm: base.mgs.sm,
-        lg: base.mgs.lg,
-        diff: (base.mgs.lg - base.mgs.sm),
-    },
-    breakpoints: {
-        sm: base.breakpoints.sm,
-        md: base.breakpoints.md,
-        lg: base.breakpoints.lg,
-    },
-    fontSizes: {
-        lg: 34,
-        md: 14,
-        sm: 12
-    },
-    borderRadii: {
-        md: 23,
-    },
-    portrait: {
-        w: `calc(100vw - 2 * ${base.mgs.sm}px)`,
-        maxW: `calc(${base.breakpoints.sm}px - 2 * ${base.mgs.sm}px)`,
-        minH: 480,
-        hToW: 1.63,
-        imgWToContW: 0.73,
-        imgHToW: 0.88
-    },
-    content: {
-        portrait: {
-            w: `calc(100vw - 2 * ${base.mgs.sm}px)`,
-            maxW: `calc(${base.breakpoints.sm}px - 2 * ${base.mgs.sm}px)`,
-            minH: '480px',
-            hToW: 1.63,
-            imgWToContW: 0.73,
-            imgHToW: 0.88
-        },
-        landscape: {
-            width: '67vw',
-            wToH: 1.8,
-            minH: '330px',
-            hToW: 0.555
-        }
-    },
-    landscape: {
-        width: '67vw',
-        wToH: 1.8,
-        minH: 330,
-        hToW: 0.555
-    },
-    media: {
-        min_sm: `min-width: ${base.breakpoints.sm}px`,
-        max_sm: `max-width: ${base.breakpoints.sm}px`,
-        max_md: `max-width: ${base.breakpoints.md}px`,
-        min_md: `min-width: ${base.breakpoints.md}px`,
-        horizontal: `min-aspect-ratio: 1/1`,
-        vertical: `max-aspect-ratio: 1/1`
-    },
-    roots: {
-        1: '14px',
-        2: '16px',
-        3: '18px',
-        4: '20px'
+        xlg: '927',
+        xxlg: 1440,
+        xxxlg: 1640,
     },
     colors: {
         accent: '#F47B56',
@@ -84,7 +23,75 @@ const styles = {
         fontLarge: '#1E1F36',
         fontSmall: '#787887',
         spacer: '#E8E8EA',
+    },
+    fontSizes: {
+        lg: 34,
+        md: 14,
+        sm: 12
+    },
+    borderRadii: {
+        md: 23,
+    },
+    ratios: {
+        imgHToW: 0.88,
+        portrait: {
+            contentHToW: 1.63,
+            imgWToContentW: 0.73,
+        },
+        landscape: {
+            illustration: 0.4,
+            faq: 0.6,
+            contentWToH: 1.8,
+            contentHToW: 0.555,
+            imgWToContentW: 1.2,
+        }
+    },
+    media: {
+        horizontal: `min-aspect-ratio: 1/1`,
+        vertical: `max-aspect-ratio: 1/1`
+    },
+    roots: {
+        1: '14px',
+        2: '15px',
+        3: '16px',
+        4: '18px'
     }
 };
 
-export {styles};
+
+const helpers = {
+    portrait: {
+      contentW: `calc(100vw - 2 * ${styles.mgs.sm}px)`,
+      maxContentW: `calc(${styles.breakpoints.sm}px - 2 * ${styles.mgs.sm}px)`,
+      minContentH: '480px',  
+      get imgWidth() {
+          return `calc(${this.contentW} * ${styles.ratios.portrait.imgWToContentW})`;
+      },
+      get maxImgWidth() {
+          return `calc(${this.maxContentW} * ${styles.ratios.portrait.imgWToContentW})`
+      },
+      get imgHeight() {
+        return `calc(${this.contentW} * 
+            ${styles.ratios.portrait.imgWToContentW} *
+            ${styles.ratios.imgHToW})`
+      }, 
+      get maxImgHeight() {
+        return `calc(${this.maxContentW} * 
+            ${styles.ratios.portrait.imgWToContentW} * 
+            ${styles.ratios.imgHToW})`
+      },
+    },
+    landscape: {
+      contentW: '67vw',
+      minContentH: '330px',
+      get imgHeight() {
+          return `calc(${this.contentW} * 
+                            ${styles.ratios.landscape.illustration} * 
+                            ${styles.ratios.landscape.imgWToContentW} * 
+                            ${styles.ratios.imgHToW})`},
+      breakpoint: (styles.breakpoints.xxlg - ((styles.mgs.lg - styles.mgs.sm) * 4)),
+      imgTransform: 'translate(0, -10%)',    
+    },
+  }
+
+export {styles, helpers};
