@@ -12,7 +12,6 @@ const styles = {
         xlg: 1200,
         xxlg: 1440,
         xxxlg: 1500
-
     },
     colors: {
         accent: '#F47B56',
@@ -25,9 +24,9 @@ const styles = {
         spacer: '#E8E8EA',
     },
     fontSizes: {
-        lg: 32,
+        sm: 12,
         md: 14,
-        sm: 12
+        lg: 32
     },
     borderRadii: {
         md: 23,
@@ -85,6 +84,6 @@ const helpers = {
       breakpoint: (styles.breakpoints.xxlg - ((styles.mgs.lg - styles.mgs.sm) * 4)),
       imgTransform: 'translate(0, -10%)',    
     },
-  }
+}
 
 export {styles, helpers};
