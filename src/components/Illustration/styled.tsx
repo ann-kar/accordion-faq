@@ -36,7 +36,10 @@ position: absolute;
 }
 
 @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
+    top: unset;
     width: calc(${s.ratios.landscape.imgWToContentW} * 100%);
+    max-width: unset;
+    max-height: unset;
     left: -20%;
     bottom: 0;
     transform: ${helpers.landscape.imgTransform};
