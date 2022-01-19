@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import Theme from "./theme/Theme";
 import { Content } from "./components";
 import {styles as s} from "./theme/styles";
 
@@ -28,11 +27,9 @@ padding-bottom: 5.7rem;
 function App() {
 
   return (
-    <Theme>
       <AppWrapper>
         <Content />
       </AppWrapper>
-    </Theme>
   );
 }
 
