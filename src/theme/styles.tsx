@@ -2,17 +2,17 @@ const styles = {
     mgs: {
         xsm: 20,
         sm: 24,
-        lg: 95,
-        xlg: 115
+        lg: 95
     },
     breakpoints: {
-        xsm: '375',
+        xsm: 375,
         sm: 400,
         md: 600,
-        lg: '800',
-        xlg: '927',
+        lg: 800,
+        xlg: 1200,
         xxlg: 1440,
-        xxxlg: 1640,
+        xxxlg: 1500
+
     },
     colors: {
         accent: '#F47B56',
@@ -25,7 +25,7 @@ const styles = {
         spacer: '#E8E8EA',
     },
     fontSizes: {
-        lg: 34,
+        lg: 32,
         md: 14,
         sm: 12
     },
@@ -49,46 +49,39 @@ const styles = {
     media: {
         horizontal: `min-aspect-ratio: 1/1`,
         vertical: `max-aspect-ratio: 1/1`
-    },
-    roots: {
-        1: '14px',
-        2: '15px',
-        3: '16px',
-        4: '18px'
     }
 };
 
-
 const helpers = {
     portrait: {
-      contentW: `calc(100vw - 2 * ${styles.mgs.sm}px)`,
-      maxContentW: `calc(${styles.breakpoints.sm}px - 2 * ${styles.mgs.sm}px)`,
-      minContentH: '480px',  
-      get imgWidth() {
-          return `calc(${this.contentW} * ${styles.ratios.portrait.imgWToContentW})`;
-      },
-      get maxImgWidth() {
-          return `calc(${this.maxContentW} * ${styles.ratios.portrait.imgWToContentW})`
-      },
-      get imgHeight() {
-        return `calc(${this.contentW} * 
+        contentW: `calc(100vw - 2 * ${styles.mgs.sm}px)`,
+        maxContentW: `calc(${styles.breakpoints.sm}px - 2 * ${styles.mgs.sm}px)`,
+        minContentH: '480px',  
+        get imgWidth() {
+            return `calc(${this.contentW} * ${styles.ratios.portrait.imgWToContentW})`;
+        },
+        get maxImgWidth() {
+            return `calc(${this.maxContentW} * ${styles.ratios.portrait.imgWToContentW})`
+        },
+        get imgHeight() {
+            return `calc(${this.contentW} * 
             ${styles.ratios.portrait.imgWToContentW} *
             ${styles.ratios.imgHToW})`
-      }, 
-      get maxImgHeight() {
-        return `calc(${this.maxContentW} * 
+        },
+        get maxImgHeight() {
+            return `calc(${this.maxContentW} * 
             ${styles.ratios.portrait.imgWToContentW} * 
             ${styles.ratios.imgHToW})`
-      },
+        },
     },
     landscape: {
-      contentW: '67vw',
-      minContentH: '350px',
-      get imgHeight() {
-          return `calc(${this.contentW} * 
-                            ${styles.ratios.landscape.illustration} * 
-                            ${styles.ratios.landscape.imgWToContentW} * 
-                            ${styles.ratios.imgHToW})`},
+        contentW: '67vw',
+        minContentH: '350px',
+        get imgHeight() {
+            return `calc(${this.contentW} * 
+                ${styles.ratios.landscape.illustration} * 
+                ${styles.ratios.landscape.imgWToContentW} * 
+                ${styles.ratios.imgHToW})`},
       breakpoint: (styles.breakpoints.xxlg - ((styles.mgs.lg - styles.mgs.sm) * 4)),
       imgTransform: 'translate(0, -10%)',    
     },
