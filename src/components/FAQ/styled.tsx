@@ -60,35 +60,31 @@ const FAQTitle = styled.h1`
     width: 100%;
     color: ${s.colors.fontLarge};
     font-size: ${s.fontSizes.lg}px;
-    line-height: ${s.fontSizes.lg}px;
-    padding: 0 0 1rem 0;
+    height: calc(${s.fontSizes.lg}px + 1rem);
+    margin: 0 0 auto 0;
     text-align: center;
-
+    
     @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
         text-align: left;
-        font-size: ${s.fontSizes.lg - 5}px;
-    
+         
         @media (min-width: ${s.breakpoints.xlg}px) {
-            padding-bottom: 1.7rem;
+            height: calc(${s.fontSizes.lg}px + 1.7rem);
         }
 
         @media (min-width: ${s.breakpoints.xxlg}px) {
-            padding-bottom: 2rem;
-            font-size: ${s.fontSizes.lg}px;
+            height: calc(${s.fontSizes.lg}px + 2rem);
         }
     }
 
     @media screen and (min-width: ${s.breakpoints.xxxlg}px) {
         font-size: 2.4rem;
-        line-height: 2.4rem;
-        padding-bottom: 2rem;
+        height: calc(2.4rem + 2rem);
     }
 `
 
 const FAQContentWrapper = styled.div`
     width: 100%;
-    padding: ${s.mgs.xsm} 0;
-    height: 100%;
+    padding: ${s.mgs.xsm} 0 0 0;
     overflow: scroll;
 
     ::-webkit-scrollbar {
@@ -104,10 +100,27 @@ const FAQContentWrapper = styled.div`
         background: ${s.colors.accent};
     }
 
-    @media screen and (${s.media.horizontal}) 
-                  and (min-width: ${s.breakpoints.sm}px) 
-                  and (max-width: ${s.breakpoints.xxlg}px) {
-        padding: 0 0.5rem 0 0;
+    @media screen and (${s.media.horizontal}) {
+
+        @media screen and (min-width: ${s.breakpoints.sm}px) and (max-width: ${s.breakpoints.xxlg}px)  {
+            padding: 0 0.5rem 0 0;
+        }
+
+        @media screen and (min-width: ${s.breakpoints.sm}px) {
+            height: calc(${helpers.landscape.imgHeight} - calc(${s.fontSizes.lg}px + 1rem));
+            min-height: calc(${helpers.landscape.minContentH} - calc(${s.fontSizes.lg}px + 1rem));
+        }
+        @media (min-width: ${s.breakpoints.xlg}px) {
+            height: calc(${helpers.landscape.imgHeight} - calc(${s.fontSizes.lg}px + 1.7rem));
+        }
+
+        @media (min-width: ${s.breakpoints.xxlg}px) {
+            height: calc(${helpers.landscape.imgHeight} - calc(${s.fontSizes.lg}px + 2rem));
+        }
+    }
+
+    @media screen and (min-width: ${s.breakpoints.xxxlg}px) {
+        height: calc(${helpers.landscape.imgHeight} - calc(2.4rem + 2rem));
     }
 `
 

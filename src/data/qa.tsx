@@ -9,15 +9,15 @@ const qa = [
     },
     {
         q: 'How do I reset my password?',
-        a: 'Every user can invite up to 5 team members.'
+        a: 'When logging in, click on the "I forgot my password" button. A new password will be sent to the email you provided during the registration.'
     },
     {
         q: 'Can I cancel my subscription?',
-        a: 'Every user can invite up to 5 team members.'
+        a: 'Yes, you are free to cancel your subscription at any time.'
     },
     {
         q: 'Do you provide additional support?',
-        a: 'Every user can invite up to 5 team members.'
+        a: 'Our PRO members enjoy round-the-clock assistance from our Customer Support Team.'
     },
 ];
 
