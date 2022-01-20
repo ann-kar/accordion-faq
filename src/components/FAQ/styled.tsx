@@ -8,7 +8,6 @@ const FAQWrapper = styled.div`
     padding: 0 ${s.mgs.sm}px;
     padding-top: calc(${helpers.portrait.imgHeight} * 0.5 + 1rem);
     padding-bottom: ${s.mgs.sm * 2}px; 
-    overflow: hidden;
 
     @media screen and (min-width: ${s.breakpoints.sm}px) { 
         padding-top: calc(${helpers.portrait.maxImgHeight} * 0.5 + 1rem);
@@ -27,6 +26,7 @@ const FAQWrapper = styled.div`
 const FAQCnt = styled.div`
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
     @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
         position: absolute;
@@ -66,6 +66,7 @@ const FAQTitle = styled.h1`
 
     @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
         text-align: left;
+        font-size: ${s.fontSizes.lg - 5}px;
     
         @media (min-width: ${s.breakpoints.xlg}px) {
             padding-bottom: 1.7rem;
@@ -73,6 +74,7 @@ const FAQTitle = styled.h1`
 
         @media (min-width: ${s.breakpoints.xxlg}px) {
             padding-bottom: 2rem;
+            font-size: ${s.fontSizes.lg}px;
         }
     }
 
@@ -88,12 +90,24 @@ const FAQContentWrapper = styled.div`
     padding: ${s.mgs.xsm} 0;
     height: 100%;
     overflow: scroll;
-    overflow: hidden;
+
+    ::-webkit-scrollbar {
+        width: 2px;
+    }
+    ::-webkit-scrollbar-track {
+        background: ${s.colors.contentBg};
+    }
+    ::-webkit-scrollbar-thumb {
+        background: ${s.colors.spacer};
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: ${s.colors.accent};
+    }
 
     @media screen and (${s.media.horizontal}) 
                   and (min-width: ${s.breakpoints.sm}px) 
                   and (max-width: ${s.breakpoints.xxlg}px) {
-        padding: 0;
+        padding: 0 0.5rem 0 0;
     }
 `
 

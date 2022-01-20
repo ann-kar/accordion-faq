@@ -14,6 +14,10 @@ align-items: center;
 pointer-events: none;
 justify-content: space-between;
 
+@media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
+    padding: 0.65rem 0;
+}
+
 @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.xlg}px) {
     padding: 1.28rem 0;
 }
