@@ -7,7 +7,7 @@ const styles = {
     breakpoints: {
         xsm: 375,
         sm: 400,
-        md: 600,
+        md: 620,
         lg: 800,
         xlg: 1200,
         xxlg: 1440,
@@ -75,7 +75,7 @@ const helpers = {
     },
     landscape: {
         contentW: '67vw',
-        minContentH: '350px',
+        minContentH: '310px',
         get imgHeight() {
             return `calc(${this.contentW} * 
                 ${styles.ratios.landscape.illustration} * 

@@ -26,6 +26,14 @@ background: ${s.colors.contentBg};
     margin-top: calc(${helpers.portrait.maxImgHeight} * 0.5);
 }
 
+@media screen and (${s.media.vertical}) and (min-height: ${s.breakpoints.xlg}px) {
+    transform: scale(1.2);
+}
+
+@media screen and (${s.media.vertical}) and (min-height: ${s.breakpoints.xxxlg}px) {
+    transform: scale(1.5);
+}
+
 @media screen and (${s.media.horizontal}) and (min-width: ${s.breakpoints.md}px) {
    width: ${helpers.landscape.contentW};
    height: calc(${helpers.landscape.contentW} * ${s.ratios.landscape.contentHToW});
